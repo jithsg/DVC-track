@@ -1,0 +1,11 @@
+stages:
+  data:
+    cmd: python prepare-data.py
+    outs:
+      - data.pkl
+  train:
+    cmd: python train.py
+    deps:
+      - data.pkl
+    outs:
+      - model.pkl

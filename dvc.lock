@@ -1,0 +1,21 @@
+schema: '2.0'
+stages:
+  data:
+    cmd: python prepare-data.py
+    outs:
+    - path: data.pkl
+      hash: md5
+      md5: 1fd8446f7065e86123d24211da62df1b
+      size: 20355
+  train:
+    cmd: python train.py
+    deps:
+    - path: data.pkl
+      hash: md5
+      md5: 1fd8446f7065e86123d24211da62df1b
+      size: 20355
+    outs:
+    - path: model.pkl
+      hash: md5
+      md5: c697d935a9299bf3c5a077e07cc3f91e
+      size: 1215
